@@ -1,0 +1,12 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+name: config-management
+spec:
+# clusterName is required and must be unique among all managed clusters
+clusterName: mycluster
+git:
+syncRepo: git@github.com:ludsh2000/ACM.git
+syncBranch: master
+secretType: ssh
+policyDir: "policy"
